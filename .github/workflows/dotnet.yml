@@ -13,7 +13,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ICT3101_Calculator.sln
+        working-directory: ICT3101_Calculator/
 
     steps:
     - uses: actions/checkout@v3
