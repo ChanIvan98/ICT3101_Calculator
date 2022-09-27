@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowCalculatorTests", "
 		{B1653306-6163-4496-8C48-613DF3CDEDC3} = {B1653306-6163-4496-8C48-613DF3CDEDC3}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F9A95424-31EC-4301-BEB1-01F9FDFB4422}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
