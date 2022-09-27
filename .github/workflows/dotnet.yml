@@ -11,10 +11,6 @@ jobs:
 
     runs-on: windows-latest
 
-    defaults:
-      run:
-        working-directory: ./ICT3101Calculator/
-
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
