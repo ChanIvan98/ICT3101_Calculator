@@ -3,12 +3,13 @@ namespace ICT3101_Calculator.UnitTests
     public class CalculatorTests
     {
         private Calculator _calculator;
-
+        IFileReader fileReader;
         [SetUp]
         public void Setup()
         {
             // Arrange
             _calculator = new Calculator();
+            fileReader = new FileReader();
         }
 
         [Test]
@@ -158,6 +159,16 @@ namespace ICT3101_Calculator.UnitTests
         public void UnknownFunctionB_WhenGivenTests_ResultThrowArgumentException(double a, double b)
         {
             Assert.That(() => _calculator.UnknownFunctionB(a, b), Throws.ArgumentException);
+        }
+
+        [Test]
+        [TestCase(1, ExpectedResult=12)]
+        [TestCase(2, ExpectedResult= 12)]
+        [TestCase(8, ExpectedResult = 2)]
+        public double GenMagicNum_WhenGivenTests_Result(int a)
+        {
+            double result = _calculator.GenMagicNum(a, fileReader);
+            return result;
         }
 
     }

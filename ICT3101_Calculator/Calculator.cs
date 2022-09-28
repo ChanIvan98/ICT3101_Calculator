@@ -1,4 +1,7 @@
-﻿namespace ICT3101_Calculator;
+﻿using System.Collections.Specialized;
+using System.Drawing.Printing;
+
+namespace ICT3101_Calculator;
 
 public class Calculator
 {
@@ -235,5 +238,31 @@ public class Calculator
         }
     }
 
+    public double GenMagicNum(double input, IFileReader fileReader)
+    {
+        double result = 0;
+        int choice = Convert.ToInt16(input);
+        ////Dependency------------------------------
+        //FileReader getTheMagic = new FileReader();
+        ////----------------------------------------
+        string[] magicStrings = fileReader.Read("C:\\SIT\\3101\\3101LabNew\\ICT3101_Calculator\\MagicNumbers.txt");
+        if ((choice >= 0) && (choice < magicStrings.Length))
+        {
+            result = Convert.ToDouble(magicStrings[choice]);
+        }
+        //If result > 0 DO (2*result)
+        //Else DO (-2*result)
+        result = (result > 0) ? (2 * result) : (-2 * result);
+        return result;
+    }
 
+
+}
+
+public class FileReader:IFileReader
+{
+    public string[] Read(string path)
+    {
+        return File.ReadAllLines(path);
+    }
 }
