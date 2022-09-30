@@ -19,7 +19,7 @@ namespace ICT3101_Calculator.UnitTests
             fr.Read("../../../../ICT3101_Calculator/MagicNumbers.txt")).Returns(new string[2] { "42","42" });
             _calculator = new Calculator();
         }
-
+        //
         [Test]
         [TestCase(0, ExpectedResult = 84)]
         public double GenMagicNum_WhenGivenTests_Result(int a)
